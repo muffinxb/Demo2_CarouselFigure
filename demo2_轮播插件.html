@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>demo04_自制轮播插件封装</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" rel="javascript" src="js/trundledemo.js"></script>
+</head>
+<body>
+<div class="templet-rolling fl" >
+    <span  class="btn-rolling btn-rolling-prev"></span>
+	<div class="wrap-rolling" data-setting='{
+								"width":840,
+								"height":525,
+								"speed":3000,
+								"autoPlay":true	
+								}'>
+		<div class="pic-rolling" data="111">
+			<a href="#"><img src="images/image01.jpg" alt="aaa"></a>
+		</div>
+		<div class="pic-rolling">
+			<a href="#"><img src="images/image02.jpg" alt="aaa"></a>
+		</div>
+		<div class="pic-rolling">
+			<a href="#"><img src="images/image03.jpg" alt="aaa"></a>
+		</div>
+		<div class="pic-rolling">
+			<a href="#"><img src="images/image04.jpg" alt="aaa"></a>
+		</div>
+		<div class="pic-rolling">
+			<a href="#"><img src="images/image05.jpg" alt="aaa"></a>
+		</div>
+		<div class="pic-rolling">
+			<a href="#"><img src="images/image06.jpg" alt="aaa"></a>
+		</div>
+	</div>
+	<div class="promo-nav">
+	</div>
+	<span class="btn-rolling btn-rolling-next"></span>
+</div>
+<div class="description fr">
+<h3>插件说明</h3>
+<p>
+1.class为“wrap-rolling”的div中，存在一个data-setting属性，值为一个JSON格式的数据，可以在其中设置四个参数，分别为"width"，表示设置的轮播框的宽度;"height"：表示设置的轮播框的高度；"speed":轮播框切换的速度；"autoplay":表示是否开启自动播放，可选值为true或false；同时图片将会继承使用设置的“width”和“height”值。如果不传入参数值，将或使用默认值：{"width":900, "heigth":500, "speed":4000,"autoPlay":false}；</p>
+<p>2.轮播框下侧的圆点是根据输入图片包裹层，类名为“pic-rolling”的div的数量自动插入的，圆点的序号和图片的序号绑定，当前显示的图片和高亮的圆点的序号相同，圆点的一般状态和高亮状态可在CSS文件中设置；</p>
+<p>3.在应用中只用复制输入<xmp>
+	<div class="pic-rolling">
+		<a href="#"><img src="#" alt="#"></a>
+	</div>
+</xmp>并传入正确的图片地址和链接地址即可。
+</p>
+</div>
+</body>
+<script>
+ $(function(){
+ 	trundleDemo= new trundleDemo();
+ });
+</script>
+</html>
